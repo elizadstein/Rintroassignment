@@ -1,0 +1,48 @@
+---
+title: "Introduction to R Assignment"
+author: "Eliza Stein"
+date: "9/4/2020"
+output: pdf_document
+---
+
+Create 4 vectors:
+
+```{r}
+
+numericYear <- as.numeric(1:10)
+factorBird <- as.factor(c('woodpecker', 'owl', 'warbler'))
+characterTree <- c('aspen', 'pine', 'oak', 'cottonwood')
+boolNest <- c(TRUE, FALSE, FALSE, TRUE)
+
+```
+
+Create data.frame:
+```{r}
+
+df1 <- data.frame(a = rpois(10, 2), b = rpois(1000, 2), d = rpois(500, 2), e = rpois(2,2))
+
+```
+
+Write function that finds max and min value of a vector and ignores NAs:
+```{r}
+
+#' getMaxMin
+#' 
+#' @param vct a vector
+#' @param func a function to apply to each vector element
+#' @returns 2 vectors of output
+#' @examples
+
+getMaxMin <- function(vct, func = range, na.omit) {
+  sapply(X = vct, FUN = func)
+}
+
+```
+
+Write function to find the entries in a vector greater or equal to a threshold:
+```{r}
+
+getFrac <- function(vct, func = )
+
+```
+
