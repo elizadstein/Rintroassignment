@@ -1,0 +1,89 @@
+---
+title: "Introduction to R Assignment"
+author: "Eliza Stein"
+date: "9/4/2020"
+output: pdf_document
+---
+
+Create 4 vectors:
+
+```{r}
+
+numericYear <- as.numeric(1:10)
+factorBird <- as.factor(c('woodpecker', 'owl', 'warbler'))
+characterTree <- c('aspen', 'pine', 'oak', 'cottonwood')
+boolNest <- c(TRUE, FALSE, FALSE, TRUE)
+
+```
+
+Create data.frame:
+```{r}
+
+df1 <- data.frame(a = rpois(10, 2), b = rpois(1000, 2), d = rpois(500, 2), e = rpois(2,2))
+
+```
+
+Write function that finds max and min value of a vector and ignores NAs:
+```{r}
+
+#' getMaxMin
+#' 
+#' @param x a vector
+#' @returns a value
+#' @examples 
+#' getMaxMin(numericYear)
+
+getMaxMin <- function(x){
+  max(x, na.rm = TRUE) - min(x, na.rm =TRUE)
+  }
+
+```
+
+Write function to find the entries in a vector greater or equal to a threshold:
+```{r}
+
+#' getFrac
+#' 
+#' @param x a vector
+#' @param thr a threshold to apply to each vector element
+#' @returns a value
+#' @examples 
+#' getFrac(numericYear, thr = 5)
+
+getFrac <- function(x, thr) {
+  length(which(x >= thr)) / length(x)
+  }
+
+```
+
+Given list of data.frames, write function that computes column means of each list element and appends them into single output data.frame:
+
+```{r}
+
+#' getlistSummary
+#' 
+#' @param df a data.frame
+#' @returns one data.frame
+#' @examples 
+#' getlist Summary(df1)
+
+getlistSummary <- function(df) {
+  apply(df, 2, mean)
+  }
+
+```
+
+Using `mtcars`, write a function that returns avg mpg of cars with $c$ cyliners and $g$ gears that errors out gracefully:
+
+```{r}
+
+data(mtcars)
+
+getMPG <- function(data, c, g) {
+  apply(data[1], 2, mean)
+}
+
+getMPG(mtcars, mtcars$cyl == 6, mtcars$gear == 4)
+```
+
+
