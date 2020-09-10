@@ -1,0 +1,10 @@
+language: r
+os: linux
+dist: xenial
+r:
+ - oldrel
+ - release
+ - devel
+instrall: skip
+script:
+ - R -e "source(Stein_intro_assignment.Rmd)"
