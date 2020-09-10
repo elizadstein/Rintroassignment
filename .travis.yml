@@ -7,4 +7,4 @@ r:
  - devel
 install: skip
 script:
- - R -e "source(Stein_intro_assignment_copy.Rmd)"
+ - R -e "source('Stein_intro_assignment_copy.Rmd')"
