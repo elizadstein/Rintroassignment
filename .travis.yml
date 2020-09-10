@@ -1,4 +1,4 @@
-language: r
+language: Rmd
 os: linux
 dist: xenial
 r:
