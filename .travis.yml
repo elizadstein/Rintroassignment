@@ -5,6 +5,6 @@ r:
  - oldrel
  - release
  - devel
-instrall: skip
+install: skip
 script:
  - R -e "source(Stein_intro_assignment.Rmd)"
